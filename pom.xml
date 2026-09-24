@@ -8,12 +8,12 @@
         <version>4.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.biblioteca</groupId>
+    <groupId>edu.biblioteca</groupId>
     <artifactId>biblioteca</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>UT1_Entorno_Servidor</name>
-    <description>UT1_Entorno_Servidor</description>
+    <name>Biblioteca Digital</name>
+    <description>Biblioteca Digital</description>
     <url/>
     <licenses>
         <license/>

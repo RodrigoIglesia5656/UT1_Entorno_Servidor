@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Digital - Catálogo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>📚 Biblioteca Digital</h1>
+    <h2>Catálogo de Libros</h2>
+
+    <!-- Tabla de libros -->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>ISBN</th>
+            <th>Disponible</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="libro : ${libros}">
+            <td th:text="${libro.id}"></td>
+            <td th:text="${libro.titulo}"></td>
+            <td th:text="${libro.autor}"></td>
+            <td th:text="${libro.isbn}"></td>
+            <td>
+                <span th:if="${libro.disponible}" class="badge success">Disponible</span>
+                <span th:unless="${libro.disponible}" class="badge danger">Prestado</span>
+            </td>
+            <td>
+                <a th:href="@{/libros/{id}(id=${libro.id})}" class="btn">Ver Detalle</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p class="info">Total de libros: <strong th:text="${libros.size()}"></strong></p>
+</div>
+</body>
+</html>
